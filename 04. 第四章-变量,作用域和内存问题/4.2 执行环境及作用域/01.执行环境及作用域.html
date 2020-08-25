@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>执行环境及作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   *  执行环境:
+   *    执行环境 定义了 变量或函数 有权访问的其他数据, 决定了它们各自的行为,每个执行环境都有一个月至关联的 变量对象
+   *    (我们也称上下文对象), 环境中定义的所有变量和函数都保存在这个对象中.(我们编写代码的时候无法访问这个对象, 但解析器在处理数据时会使用它)
+   *
+   *  全局执行环境:
+   *    全局执行环境是最外层的一个执行环境, 在 Web浏览器中, 全局执行环境被认为是对象.
+   */
+   try{
+     console.dir(Error);
+     throw new Error()
+   }catch (e) {
+     console.log(1,name);
+   }
+</script>
+</body>
+</html>
