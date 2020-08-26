@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>probeGene</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   *  在函数内部, 有两个特殊的对象:  arguments 和 this
+   *    arguments 是一个类数组对象, 包含着传入函数中的所有 参数
+   *    虽然 arguments 的主要用途是保存函数参数, 但 arguments 对象还包含一个 callee 的属性,
+   *    该属性是一个指针, 指向拥有这个 arguments 对象的函数, 也就是指向当前这个函数本身
+   */
+
+  // 例如定义一个递归实现 阶乘.
+  function factorial(num) {
+    if (num <= 1) {
+      return 1
+    } else {
+      // 虽然这种方式也能实现,但是factorial 函数名紧紧耦合在了一起,
+      // 如果外部函数名字修改,那么内部递归也得修改,太麻烦.
+      // return num * factorial(num - 1)
+      return num * arguments.callee(num - 1)
+    }
+  }
+
+  // console.log(factorial(3))
+
+  /**
+   *  caller: ES5 也规范了另一个函数对象的属性 caller
+   *  这个属性指向调用当前函数的外部函数的引用, 意思是说指向它外部调用的函数
+   */
+  function outer() {
+    console.dir(outer)
+    inner()
+  }
+
+  function inner() {
+    console.log(inner.caller == outer);// 返回 true, 我们知道 caller 指向外部调用当前函数的函数
+  }
+
+  outer()
+</script>
+</body>
+</html>

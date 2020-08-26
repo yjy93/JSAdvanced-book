@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>probeGene</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  // console.log(sum(3, 4));
+  // 函数声明的方式创建的函数可以被提前解析访问
+  // function sum(a, b) { // 可以正常访问
+  //   return a + b
+  // }
+
+  console.log(sum(3, 4));// 函数表达式方式提前访问会报错 sum is not a function
+  // 函数表达式的方式不会被提前解析, 提前访问会报错
+  var sum = function (a, b,) {
+    return a + b
+  }
+</script>
+</body>
+</html>

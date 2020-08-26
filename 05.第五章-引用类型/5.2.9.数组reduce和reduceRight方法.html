@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>probeGene</title>
+</head>
+<body>
+<script type="text/javascript">
+  const arr = [1, 4, 5, 14, 6]
+  // const result = arr.reduce((preV, curV) => {
+  //   return preV + curV
+  // },10)
+  const result = arr.reduceRight((preV,curV)=>{
+    return preV + curV
+  },30)
+  console.log(result);
+
+</script>
+</body>
+</html>
