@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>probeGene</title>
+</head>
+<body>
+<script type="text/javascript">
+  function Person() {
+
+  }
+
+  const p1 = new Person()
+  const p2 = new Person()
+
+  // 即: 实例对象的 __proto__ 指向构造函数的 prototype 属性
+  console.log(p1.__proto__ == Person.prototype) // true
+
+  // 即: 构造函数的 prototype 原型中有一个 constructor 属性, 指向本身就是当前的构造函数
+  console.log(Person.prototype.constructor == Person) // true
+</script>
+</body>
+</html>
