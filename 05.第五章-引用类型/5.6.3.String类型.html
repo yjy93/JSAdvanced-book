@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     *  应该值得注意的是, 即使字符串中包含双字节字符(不是占一个字节的ASCII字符),每个字符仍然也算一个长度
+     */
+    // const str = "你好"
+    // console.log(str.length);
+    /**
+     *  String 类型的 三个截取子字符串的方法
+     */
+    const str = "hello world!"
+    console.log(str.slice(2, 6))
+    console.log(str.substring(2, 6))
+    // slice 和 substring 的第二个参数表示截取的结束位置
+    // substr 的第二个参数表示 保留的字符个数
+    console.log(str.substr(2, 6))
+</script>
+</body>
+</html>
